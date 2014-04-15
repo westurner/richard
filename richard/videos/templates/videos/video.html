@@ -35,8 +35,8 @@
   <div id="videobox" class="col-md-12">
     <div class="section">
       <h3 class="centered" property="name">{{ v.title }}</h3>
-      <meta property="thumbnailUrl" content="{{ v.get_thumbnail_url }}"/>
-      <meta property="sameAs" content="{{ v.get_absolute_url }}"/>
+      <link property="thumbnailUrl" href="{{ v.get_thumbnail_url }}"/>
+      <link property="sameAs" href="{{ v.get_absolute_url }}"/>
     </div>
 
     {# Fix floats in unisubs widget that are not cleared #}
