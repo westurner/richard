@@ -138,6 +138,7 @@
         {% if v.duration %}
           <dt>Duration</dt>
           <dd>{{ v.duration|duration }}</dd>
+          <meta property="duration" content="{{ v.duration|duration_iso8601 }}"/>
         {% endif %}
 
         {% if v.recorded %}
