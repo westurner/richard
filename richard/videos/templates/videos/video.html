@@ -84,7 +84,7 @@
       <div class="section">
         <h4>Summary</h4>
         <span property="description">{{ v.summary|md|safe }}</span>
-        <span property="caption">{{ v.summary|md|safe }}</span>
+        <meta property="caption" content="{{ v.summary|md|safe }}"/>
       </div>
     {% endif %}
 
@@ -131,27 +131,31 @@
 
         {% if v.language %}
           <dt>Language</dt>
-          <dd>{{ v.language.name }}</dd>
-          <meta property="inLanguage" content="{{ v.language.iso639_1 }}"/>
+          <dd>{{ v.language.name }}
+            <meta property="inLanguage" content="{{ v.language.iso639_1 }}"/>
+          </dd>
         {% endif %}
 
         {% if v.duration %}
           <dt>Duration</dt>
-          <dd>{{ v.duration|duration }}</dd>
-          <meta property="duration" content="{{ v.duration|duration_iso8601 }}"/>
+          <dd>{{ v.duration|duration }}
+            <meta property="duration" content="{{ v.duration|duration_iso8601 }}"/>
+          </dd>
         {% endif %}
 
         {% if v.recorded %}
           <dt>Recorded</dt>
-          <dd>{{ v.recorded|date:"DATE_FORMAT" }}</dd>
-          <meta property="dateCreated" content="{{ v.recorded|date:"c" }}"/>
+          <dd>{{ v.recorded|date:"DATE_FORMAT" }}
+            <meta property="dateCreated" content="{{ v.recorded|date:"c" }}"/>
+          </dd>
         {% endif %}
 
         {% if v.updated %}
           <dt>Last updated</dt>
-          <dd>{{ v.updated|date:"DATE_FORMAT" }}</dd>
-          <meta property="dateModified" content="{{ v.updated|date:"c" }}"/>
-          <meta property="datePublished" content="{{ v.updated|date:"c" }}"/>
+          <dd>{{ v.updated|date:"DATE_FORMAT" }}
+            <meta property="dateModified" content="{{ v.updated|date:"c" }}"/>
+            <meta property="datePublished" content="{{ v.updated|date:"c" }}"/>
+          </dd>
         {% endif %}
 
         <dt>Video origin</dt>
@@ -201,7 +205,6 @@
           {% empty %}
             No tags
           {% endfor %}
-          <meta property="keywords" content="python"/>
         </dd>
       </dl>
     </div>
