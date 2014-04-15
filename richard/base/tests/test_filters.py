@@ -86,21 +86,21 @@ class DurationFilterTest(unittest.TestCase):
 
 class DurationISO8601FilterTest(unittest.TestCase):
     def test_seconds(self):
-        eq_("T00H00M00S", duration_iso8601(0))
-        eq_("T00H00M01S", duration_iso8601(1))
+        eq_("PT00H00M00S", duration_iso8601(0))
+        eq_("PT00H00M01S", duration_iso8601(1))
 
     def test_minutes(self):
-        eq_("T00H01M01S", duration_iso8601(61))
-        eq_("T00H01M00S", duration_iso8601(60))
-        eq_("T00H02M00S", duration_iso8601(120))
+        eq_("PT00H01M01S", duration_iso8601(61))
+        eq_("PT00H01M00S", duration_iso8601(60))
+        eq_("PT00H02M00S", duration_iso8601(120))
 
     def test_hours(self):
-        eq_("T01H00M00S", duration_iso8601(3600))
-        eq_("T01H00M02S", duration_iso8601(3602))
-        eq_("T02H00M00S", duration_iso8601(7200))
-        eq_("T02H02M00S", duration_iso8601(7320))
-        eq_("T02H02M01S", duration_iso8601(7321))
-        eq_("T02H02M02S", duration_iso8601(7322))
+        eq_("PT01H00M00S", duration_iso8601(3600))
+        eq_("PT01H00M02S", duration_iso8601(3602))
+        eq_("PT02H00M00S", duration_iso8601(7200))
+        eq_("PT02H02M00S", duration_iso8601(7320))
+        eq_("PT02H02M01S", duration_iso8601(7321))
+        eq_("PT02H02M02S", duration_iso8601(7322))
 
     def test_bad(self):
-        eq_("T00H00M00S", duration_iso8601(None))
+        eq_("PT00H00M00S", duration_iso8601(None))

@@ -58,5 +58,5 @@ def duration_iso8601(duration):
         hours = minutes = seconds = 0
     else:
         hours, minutes, seconds = seconds_to_hms(duration)
-    return 'T%02dH%02dM%02dS' % (hours, minutes, seconds)
+    return 'PT%02dH%02dM%02dS' % (hours, minutes, seconds)
 
