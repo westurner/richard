@@ -41,25 +41,25 @@ class BatchFilterTest(unittest.TestCase):
 
 class Seconds_to_hmsTest(unittest.TestCase):
     def test_seconds(self):
-        eq_((0,0,15), seconds_to_hms(15))
-        eq_((0,0,1),  seconds_to_hms(1))
+        eq_((0, 0, 15), seconds_to_hms(15))
+        eq_((0, 0, 1),  seconds_to_hms(1))
 
     def test_minutes(self):
-        eq_((0,1,1), seconds_to_hms(61))
-        eq_((0,1,0), seconds_to_hms(60))
-        eq_((0,2,0), seconds_to_hms(120))
+        eq_((0, 1, 1), seconds_to_hms(61))
+        eq_((0, 1, 0), seconds_to_hms(60))
+        eq_((0, 2, 0), seconds_to_hms(120))
 
     def test_hours(self):
-        eq_((1,0,0), seconds_to_hms(3600))
-        eq_((1,0,2), seconds_to_hms(3602))
-        eq_((2,0,0), seconds_to_hms(7200))
-        eq_((2,2,0), seconds_to_hms(7320))
-        eq_((2,2,1), seconds_to_hms(7321))
-        eq_((2,2,2), seconds_to_hms(7322))
+        eq_((1, 0, 0), seconds_to_hms(3600))
+        eq_((1, 0, 2), seconds_to_hms(3602))
+        eq_((2, 0, 0), seconds_to_hms(7200))
+        eq_((2, 2, 0), seconds_to_hms(7320))
+        eq_((2, 2, 1), seconds_to_hms(7321))
+        eq_((2, 2, 2), seconds_to_hms(7322))
 
     def test_days(self):
         # NOTE: Represents times greater than one day as more than 24 hours
-        eq_((25,0,1), seconds_to_hms(90001))
+        eq_((25, 0, 1), seconds_to_hms(90001))
 
 
 class DurationFilterTest(unittest.TestCase):
